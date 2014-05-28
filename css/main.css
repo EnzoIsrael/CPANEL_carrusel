@@ -1,0 +1,17 @@
+body{
+	background-color: #eee;
+}
+
+canvas{
+	height: 500px;
+	width: 500px;
+	boder: 1px solid hotpink;
+}
+
+#content{
+	margin-top: 45px;
+}
+
+#right-panel{
+	background-color: #fff;
+}
