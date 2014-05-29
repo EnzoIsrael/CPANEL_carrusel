@@ -4,6 +4,8 @@ $( document ).ready(function() {
 	var context   = theCanvas.getContext('2d');
 	var img = new Image();
 
+
+
 	var windowX = 0;
 	var windowY = 0;
 	var currentScale = 1;
@@ -53,19 +55,45 @@ $( document ).ready(function() {
 
 			switch(e.keyCode){
 
+				case 38:
+					//arriba
+					windowY-=10;
+					if(windowY<0)
+						windowY = 0;
+					break;
+
+				case 40:
+					//abajo
+					windowY+=10;
+					if(windowY>img.height - 500)
+						windowY = img.height - 500;
+					break;
+
+				case 37:
+					//izquierda
+					windowX-=10;
+					if(windowX<0)
+						windowX=0;
+					break;
+
+				case 39:
+					//derecha
+					windowX+=10;
+					if(windowX>img.width - 500)
+						windowX = img.width - 500
+					break;	
+
 				case 109:
 					//-
 					currentScale-=scaleInc;
-					if(currentScale<minScale){
+					if(currentScale<minScale)
 						currentScale = minScale;
-					}
 					break;
 				case 107:
 					//+
 					currentScale+=scaleInc;
-					if(currentScale>maxScale){
+					if(currentScale>maxScale)
 						currentScale = maxScale
-					}
 			}
 		}
 });
