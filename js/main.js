@@ -5,13 +5,21 @@ $( document ).ready(function() {
 	var img = new Image();
 
 
+	document.getElementById("save").onclick=function(){
+		var oCanvas = document.getElementById("canvas"); 
+		var strDataURI = oCanvas.toDataURL();
+		alert(strDataURI);
+	};
+	
+
+
 
 	var windowX = 0;
 	var windowY = 0;
 	var currentScale = 1;
 	var minScale = .2;
 	var maxScale = 3;
-	var scaleInc = .1;
+	var scaleInc = .05;
 
 	setInterval(eventImgLoaded,100);
 
@@ -42,7 +50,7 @@ $( document ).ready(function() {
 
 		function eventImgLoaded(){
 			context.fillStyle = "#cccccc";
-			context.fillRect(0, 0, 500, 500);
+			context.fillRect(0, 0, 970, 400);
 			context.drawImage(img
 				, windowX, windowY
 				, img.width, img.height
